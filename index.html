@@ -11,6 +11,8 @@
     <div class="container">
       <h1>Pizza Website</h1>
       <form id="pizza-form">
+        <label for="name">What is your name?</label>
+          <input id="name" type="text" class="form-control">
         <div class="form-group">
           <label for="Size">What size pizza do you want?</label>
           <div class="radio">
@@ -31,19 +33,23 @@
               Medium - $15
             </label>
           </div>
-          <div class="form-group">
-          <p>What toppings would you like? (check all that apply):</p>
-          <input type="checkbox" name="bad-omen" value=".50"> Extra Mozzarella - $0.50 <br>
-          <input type="checkbox" name="bad-omen" value=".50"> Peppers - $0.50 <br>
-          <input type="checkbox" name="bad-omen" value=".50"> Mushrooms - $0.50 <br>
-          <input type="checkbox" name="bad-omen" value="1"> Goat Cheese - $1.00 <br>
-          <input type="checkbox" name="bad-omen" value="1"> Sun Dried Tomatoes - $1.00 <br>
-          <input type="checkbox" name="bad-omen" value="2"> Sausage - $2.00 <br>
-          <input type="checkbox" name="bad-omen" value="2"> Pepperoni - $2.00 <br>
-          <input type="checkbox" name="bad-omen" value=".50"> Fresh Basil - $0.50 <br>
-          </div>
         </div>
+        <div class="form-group">
+          <p>What toppings would you like? (check all that apply):</p>
+          <input type="checkbox" name="topping" value=".50"> Extra Mozzarella - $0.50 <br>
+          <input type="checkbox" name="topping" value=".50"> Peppers - $0.50 <br>
+          <input type="checkbox" name="topping" value=".50"> Mushrooms - $0.50 <br>
+          <input type="checkbox" name="topping" value="1"> Goat Cheese - $1.00 <br>
+          <input type="checkbox" name="topping" value="1"> Sun Dried Tomatoes - $1.00 <br>
+          <input type="checkbox" name="topping" value="2"> Sausage - $2.00 <br>
+          <input type="checkbox" name="topping" value="2"> Pepperoni - $2.00 <br>
+          <input type="checkbox" name="topping" value=".50"> Fresh Basil - $0.50 <br>
+        </div>
+        <button type="submit">Calculate Total</button>
       </form>
+      <span id="Order">
+        <p></p>
+      </span>
     </div>
   </body>
 </html>
