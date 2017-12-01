@@ -22,6 +22,8 @@ $(document).ready(function(){
     $("input:checkbox[name=topping]:checked").each(function(){
       newPizza.toppings += parseFloat($(this).val());
     });
+    $("#Total").text("$" + newPizza.Price().toFixed(2));
+    $("#Order").show();
     newPizza.Price();
 
     console.log(newPizza.toppingPrice);
