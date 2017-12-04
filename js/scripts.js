@@ -6,9 +6,16 @@ function Pizza(name, size) {
 };
 
 Pizza.prototype.Price = function() {
-  return this.size + this.toppingPrice;
+  for (var index = 0; index < this.toppings.length; index += 1) {
+    if (this.toppings[index] === "Peppers" || this.toppings[index] === "Extra Mozzarella" || this.toppings[index] === "Mushrooms" || this.toppings[index] === "Fresh Basil"){
+    this.toppingPrice += .50
+    } else if (this.toppings[index] === "Goat Cheese" || this.toppings[index] === "Sun Dried Tomatoes"){
+    this.toppingPrice += 1.00
+    } else {
+    this.toppingPrice += 2.00
+  };
+  };
 };
-
 
 $(document).ready(function(){
   $("form#pizza-form").submit(function(event){
@@ -16,19 +23,20 @@ $(document).ready(function(){
     var inputtedName = $("#name").val();
     var size = parseInt($("input:radio[name=Size]:checked").val());
     var newPizza = new Pizza(inputtedName, size);
+    // $("input:checkbox[name=topping]:checked").each(function(){
+    //   newPizza.toppingPrice += parseFloat($(this).val());
+    // });
     $("input:checkbox[name=topping]:checked").each(function(){
-      newPizza.toppingPrice += parseFloat($(this).val());
+      newPizza.toppings.push($(this).val());
     });
-    $("input:checkbox[name=topping]:checked").each(function(){
-      newPizza.toppings += parseFloat($(this).val());
-    });
-    $("#Total").text("$" + newPizza.Price().toFixed(2));
+    // $("#Total").text("$" + newPizza.Price().toFixed(2));
     $("#Order").show();
     newPizza.Price();
-
+    console.log(newPizza.toppings);
     console.log(newPizza.toppingPrice);
     console.log(newPizza.size);
     console.log(newPizza.name);
-    console.log(newPizza.Price());
+    // console.log(newPizza.Price());
+
   });
 });
