@@ -1,6 +1,7 @@
-function Pizza(name, size) {
+function Pizza(name, size, delivery) {
   this.name = name;
   this.size = size;
+  this.delivery = delivery;
 	this.toppings = [];
   this.totalPrice = 0;
 };
@@ -22,6 +23,17 @@ Pizza.prototype.Price = function() {
   } else {
     this.totalPrice += 15.00
   };
+  if (this.delivery === "yes"){
+    this.totalPrice += 5.00
+  };
+};
+
+function resetFields() {
+  $("input#name").val("");
+  $("input:radio[name=Size]:checked").val("");
+  $("input:checkbox[name=topping]:checked").val("");
+  $("input.new-city").val("");
+  $("input.new-state").val("");
 };
 
 $(document).ready(function(){
@@ -29,21 +41,21 @@ $(document).ready(function(){
     event.preventDefault();
     var inputtedName = $("#name").val();
     var size = $("input:radio[name=Size]:checked").val();
-    var newPizza = new Pizza(inputtedName, size);
-    // $("input:checkbox[name=topping]:checked").each(function(){
-    //   newPizza.totalPrice += parseFloat($(this).val());
-    // });
+    var delivery = $("input:radio[name=delivery]:checked").val();
+    newPizza = new Pizza(inputtedName, size, delivery);
     $("input:checkbox[name=topping]:checked").each(function(){
       newPizza.toppings.push($(this).val());
     });
     newPizza.Price();
     $("#Total").text("$" + newPizza.totalPrice.toFixed(2));
+    $("#customerName").text(newPizza.name);
+    $("#pizzaSize").text(newPizza.size);
+    $("#pizzaToppings").text(newPizza.toppings.join(", "));
+    $("#deliver").show();
     $("#Order").show();
-    console.log(newPizza.toppings);
-    console.log(newPizza.totalPrice);
-    console.log(newPizza.size);
-    console.log(newPizza.name);
-    // console.log(newPizza.Price());
-
+    console.log(delivery);
   });
+  $("#delivery").click(function() {
+       $("#address").show();
+     });
 });
