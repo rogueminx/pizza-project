@@ -56,6 +56,9 @@ $(document).ready(function(){
     console.log(delivery);
   });
   $("#delivery").click(function() {
-       $("#address").show();
-     });
+    $("#address").show();
+  });
+  $("#pick-up").click(function() {
+    $("#address").hide();
+  });
 });

@@ -1,3 +1,25 @@
+.container{
+  margin: 0 auto;
+}
+
+body {
+  background-image: url("../photos/background01.jpeg");
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+.pizza-order {
+  background-color: white;
+  opacity: 0.8;
+  width: 75%;
+  padding: 25px 50px 50px 50px;
+  border-radius: 25px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 #Order {
   display: none;
 }
