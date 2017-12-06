@@ -17,13 +17,21 @@ h1 {
   font-family: monospace;
 }
 
+h3 {
+  font-size: 25px;
+  font-stretch: eßxpanded;
+  color: red;
+  text-align: center;
+  font-family: monospace;
+}
+
 hr {
   border-top: 1px solid red;
 }
 
 .pizza-order {
   background-color: white;
-  opacity: 0.8;
+  opacity: 0.9;
   width: 85%;
   padding: 25px 50px 50px 50px;
   border-radius: 25px;
@@ -37,5 +45,13 @@ hr {
 }
 
 #address {
+  display: none;
+}
+
+#deliver {
+  display: none;
+}
+
+#picking-up {
   display: none;
 }

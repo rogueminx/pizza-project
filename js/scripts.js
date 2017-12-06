@@ -25,6 +25,9 @@ Pizza.prototype.Price = function() {
   };
   if (this.delivery === "yes"){
     this.totalPrice += 5.00
+    $("#deliver").show()
+  } else {
+    $("#picking-up").show();
   };
 };
 
@@ -50,8 +53,10 @@ $(document).ready(function(){
     $("#Total").text("$" + newPizza.totalPrice.toFixed(2));
     $("#customerName").text(newPizza.name);
     $("#pizzaSize").text(newPizza.size);
-    $("#pizzaToppings").text(newPizza.toppings.join(", "));
-    $("#deliver").show();
+    $("ul#pizzaToppings").text("");
+       newPizza.toppings.forEach(function(topping) {
+         $("ul#pizzaToppings").append("<li>" + topping + "</li>");
+       });
     $("#Order").show();
     console.log(delivery);
   });
