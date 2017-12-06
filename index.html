@@ -11,74 +11,81 @@
     <div class="container">
       <div class="pizza-order">
         <h1>Pizza Website</h1>
-        <form id="pizza-form">
-          <label for="name">What is your name?</label>
-          <input id="name" type="text" class="form-control">
-          <br>
-          <div class="form-group">
-            <label for="delivery">Do you want to pick up, or have it delivered?</label>
-            <div class="radio">
-              <label>
-                <input id="pick-up" type="radio" name="delivery" value="no" checked>
-                Pick Up - Free
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input id="delivery" type="radio" name="delivery" value="yes">
-                Delivery - $5
-              </label>
-            </div>
-          </div>
-          <div id="address">
-            <div class="address">
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <form id="pizza-form">
+              <label for="name">What is your name?</label>
+              <input id="name" type="text" class="form-control">
+              <br>
               <div class="form-group">
-                <label for="street">Street:</label>
-                <input type="text" class="form-control street">
+                <label for="delivery">Do you want to pick up, or have it delivered?</label>
+                <div class="radio">
+                  <label>
+                    <input id="pick-up" type="radio" name="delivery" value="no" checked>
+                    Pick Up - Free
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input id="delivery" type="radio" name="delivery" value="yes">
+                    Delivery - $5
+                  </label>
+                </div>
+              </div>
+              <div id="address">
+                <div class="address">
+                  <div class="form-group">
+                    <label for="street">Street:</label>
+                    <input type="text" class="form-control street">
+                  </div>
+                  <div class="form-group">
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="text" class="form-control phone-number">
+                  </div>
+                </div>
               </div>
               <div class="form-group">
-                <label for="phone-number">Phone Number:</label>
-                <input type="text" class="form-control phone-number">
+                <label for="Size">What size pizza do you want?</label>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="Size" value="Extra Large" checked>
+                    Extra Large - $25
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="Size" value="Large">
+                    Large - $20
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="Size" value="Medium">
+                    Medium - $15
+                  </label>
+                </div>
               </div>
-            </div>
+              <div class="form-group">
+                <p>What toppings would you like? (check all that apply):</p>
+                <input type="checkbox" name="topping" value="Extra Mozzarella"> Extra Mozzarella - $0.50 <br>
+                <input type="checkbox" name="topping" value="Peppers"> Peppers - $0.50 <br>
+                <input type="checkbox" name="topping" value="Mushrooms"> Mushrooms - $0.50 <br>
+                <input type="checkbox" name="topping" value="Goat Cheese"> Goat Cheese - $1.00 <br>
+                <input type="checkbox" name="topping" value="Sun Dried Tomatoes"> Sun Dried Tomatoes - $1.00 <br>
+                <input type="checkbox" name="topping" value="Sausage"> Sausage - $2.00 <br>
+                <input type="checkbox" name="topping" value="Pepperoni"> Pepperoni - $2.00 <br>
+                <input type="checkbox" name="topping" value="Fresh Basil"> Fresh Basil - $0.50 <br>
+              </div>
+              <button type="submit">Calculate Total</button>
+            </form>
           </div>
-          <div class="form-group">
-            <label for="Size">What size pizza do you want?</label>
-            <div class="radio">
-              <label>
-                <input type="radio" name="Size" value="Extra Large" checked>
-                Extra Large - $25
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="Size" value="Large">
-                Large - $20
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="Size" value="Medium">
-                Medium - $15
-              </label>
-            </div>
+          <div class="col-md-6">
+            <span id="Order">
+              <p>Thanks for your order, <span id="customerName"></span>! The total for your <span id="pizzaSize"></span> pizza with <span id="pizzaToppings"></span> is: <span id="Total"></span>. <span id="deliver"> It will be delivered to your house within the hour!</span> </p>
+            </span>
           </div>
-          <div class="form-group">
-            <p>What toppings would you like? (check all that apply):</p>
-            <input type="checkbox" name="topping" value="Extra Mozzarella"> Extra Mozzarella - $0.50 <br>
-            <input type="checkbox" name="topping" value="Peppers"> Peppers - $0.50 <br>
-            <input type="checkbox" name="topping" value="Mushrooms"> Mushrooms - $0.50 <br>
-            <input type="checkbox" name="topping" value="Goat Cheese"> Goat Cheese - $1.00 <br>
-            <input type="checkbox" name="topping" value="Sun Dried Tomatoes"> Sun Dried Tomatoes - $1.00 <br>
-            <input type="checkbox" name="topping" value="Sausage"> Sausage - $2.00 <br>
-            <input type="checkbox" name="topping" value="Pepperoni"> Pepperoni - $2.00 <br>
-            <input type="checkbox" name="topping" value="Fresh Basil"> Fresh Basil - $0.50 <br>
-          </div>
-          <button type="submit">Calculate Total</button>
-        </form>
-        <span id="Order">
-          <p>Thanks for your order, <span id="customerName"></span>! The total for your <span id="pizzaSize"></span> pizza with <span id="pizzaToppings"></span> is: <span id="Total"></span>. <span id="deliver"> It will be delivered to your house within the hour!</span> </p>
-        </span>
+        </div>
       </div>
     </div>
   </body>
