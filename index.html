@@ -10,13 +10,15 @@
   <body>
     <div class="container">
       <div class="pizza-order">
-        <h1>Pizza Website</h1>
+        <h1>Greasebomb Pizza</h1>
         <hr>
         <div class="row">
           <div class="col-md-6">
             <form id="pizza-form">
-              <label for="name">What is your name?</label>
-              <input id="name" type="text" class="form-control">
+              <div class="name">
+                <label for="name">What is your name?</label>
+                <input id="name" type="text" class="form-control">
+              </div>
               <br>
               <div class="form-group">
                 <label for="delivery">Do you want to pick up, or have it delivered?</label>
@@ -37,11 +39,11 @@
                 <div class="address">
                   <div class="form-group">
                     <label for="street">Street:</label>
-                    <input type="text" class="form-control street">
+                    <input type="text" class="form-control" id="street">
                   </div>
                   <div class="form-group">
                     <label for="phone-number">Phone Number:</label>
-                    <input type="text" class="form-control phone-number">
+                    <input type="text" class="form-control" id="phone-number">
                   </div>
                 </div>
               </div>
@@ -67,7 +69,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <p>What toppings would you like? (check all that apply):</p>
+                <label for="topping">What toppings would you like? (check all that apply):</label><br>
                 <input type="checkbox" name="topping" value="Extra Mozzarella"> Extra Mozzarella - $0.50 <br>
                 <input type="checkbox" name="topping" value="Peppers"> Peppers - $0.50 <br>
                 <input type="checkbox" name="topping" value="Mushrooms"> Mushrooms - $0.50 <br>
@@ -84,11 +86,11 @@
             <span id="Order">
               <h3><span id="customerName"></span>'s Order</h3>
               <hr>
-              <p>Thanks! Please review your order!</p>
+              <p>Thanks! That sounds damn delicious! Please take a minute to review your order!</p>
               <h4>One <span id="pizzaSize"></span> pizza with:</h4>
               <ul id="pizzaToppings">
               </ul>
-              <p><span id="deliver"> It will be delivered to your house within the hour!</span></p>
+              <p><span id="deliver"> It will be delivered to <span id="deliveryAddress"></span> within the hour! We'll call you at <span id=customerPhoneNumber></span> with any questions!</span></p>
               <p><span id="picking-up"> It will be available for pick-up in 30 minutes!</span></p>
               <hr>
               <h4>Total: <span id="Total"></span></h4>

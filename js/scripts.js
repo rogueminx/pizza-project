@@ -1,5 +1,7 @@
-function Pizza(name, size, delivery) {
+function Pizza(name, size, delivery, address, phone) {
   this.name = name;
+  this.address = address;
+  this.phoneNumber = phone;
   this.size = size;
   this.delivery = delivery;
 	this.toppings = [];
@@ -45,20 +47,25 @@ $(document).ready(function(){
     var inputtedName = $("#name").val();
     var size = $("input:radio[name=Size]:checked").val();
     var delivery = $("input:radio[name=delivery]:checked").val();
-    newPizza = new Pizza(inputtedName, size, delivery);
+    var address = $("#street").val();
+    var phone = $("#phone-number").val();
+    newPizza = new Pizza(inputtedName, size, delivery, address, phone);
     $("input:checkbox[name=topping]:checked").each(function(){
       newPizza.toppings.push($(this).val());
     });
     newPizza.Price();
     $("#Total").text("$" + newPizza.totalPrice.toFixed(2));
     $("#customerName").text(newPizza.name);
-    $("#pizzaSize").text(newPizza.size);
+    $("#pizzaSize").text(newPizza.size.toLowerCase());
+    $("#deliveryAddress").text(newPizza.address);
+    $("#customerPhoneNumber").text(newPizza.phoneNumber);
     $("ul#pizzaToppings").text("");
        newPizza.toppings.forEach(function(topping) {
          $("ul#pizzaToppings").append("<li>" + topping + "</li>");
        });
     $("#Order").show();
-    console.log(delivery);
+    $(".name").hide();
+    $("#address").hide();
   });
   $("#delivery").click(function() {
     $("#address").show();
